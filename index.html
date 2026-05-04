@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="text" id="name-input" placeholder="Enter your name"/>
+    <button id="save-btn">Save Name</button>
+    <button id="load-btn">Load Name</button>
+    <p id="output"></p>
+
+    <script>
+      const nameInput = document.getElementById("name-input");
+      const saveBtn = document.getElementById("save-btn");
+      const loadBtn = document.getElementById("load-btn");
+      const output= document.getElementById("output");
+
+      saveBtn.addEventListener("click", function(){
+        const name = nameInput.value;
+        localStorage.setItem("userName",name);
+        output.textContent="Name Saved!"
+      })
+
+      loadBtn.addEventListener("click", function(){
+        const name = nameInput.value;
+        localStorage.getItem("userName");
+        if(saveBtn){
+            output.textContent=(`Hello ${name}`)
+        }else{
+            output.textContent="No name found"
+        }
+      })
+
+    </script>
+  </body>
+</html>
